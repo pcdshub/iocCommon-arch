@@ -31,7 +31,11 @@ if [ "$lspci_edt" != "" ]; then
 			mount --bind $EDT_DRIVER /opt/EDTpdv
 			mount --bind $PACKAGE_SITE_TOP/EDTpdv/${EDT_VER}/pdv /opt/pdv
 		fi
-		/opt/EDTpdv/edtinit.sh start
+		if [ ! -f /opt/EDTpdv/edtinit.sh ]; then
+			echo ERROR: /opt/EDTpdv/edtinit.sh not found
+		else
+			/opt/EDTpdv/edtinit.sh start
+		fi
 	else
 		echo EDT driver dir not found: $EDT_DRIVER
 	fi
