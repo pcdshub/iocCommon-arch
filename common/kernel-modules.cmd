@@ -7,7 +7,7 @@ if [ -z "$IOC_COMMON" ]; then
 	export IOC_COMMON=/reg/d/iocCommon
 fi
 if [ -z "$T_A" ]; then
-	export T_A=rhel7-x86_64
+	export T_A=rhel9-x86_64
 fi
 # =========================================
 # Find the packages and driver paths, allowing override

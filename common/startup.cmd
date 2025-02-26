@@ -1,12 +1,12 @@
 #!/bin/sh
 # =============================================================
-# Master startup script for all PCDS rhel7 IOC hosts
+# Master startup script for all PCDS rocky9 IOC hosts
 # This script is run as the BOOTFILE via
 # /etc/rc.d/init.d/ioc
 # Must be run as the "root" user.
 
 # Set the target architecture
-export T_A=rhel7-x86_64
+export T_A=rhel9-x86_64
 
 # =============================================================
 # Setup the common directory env variables
@@ -44,5 +44,6 @@ PYPS_ROOT=$PYPS_SITE_TOP
 
 if ! ps -C procmgrd0 -o cmd | grep 39050 > /dev/null; then
 	# Launch the iocManager
-	$PYPS_SITE_TOP/apps/ioc/latest/initIOC
+	#$PYPS_SITE_TOP/apps/ioc/latest/initIOC
+	$PYPS_SITE_TOP/apps/ioc/dev-rocky9/scripts/initIOC
 fi

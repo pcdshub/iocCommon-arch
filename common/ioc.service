@@ -6,7 +6,7 @@ Requires=multi-user.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/systemd/scripts/slac-iochost-startup.sh
+ExecStart=/usr/lib/systemd/scripts/ioc.sh
 RemainAfterExit=yes
 
 [Install]
