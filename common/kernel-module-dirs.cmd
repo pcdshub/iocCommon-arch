@@ -47,7 +47,7 @@ if [ "$TPR_DRIVER" == "" ];
 then
 	if [ "$TPR_VER" == "" ];
 	then
-		TPR_VER=latest
+		TPR_VER=R0.6.2
 	fi
 	TPR_DRIVER=$PACKAGE_SITE_TOP/slaclab/pcieTprDriver/$TPR_VER/
 fi
