@@ -125,8 +125,11 @@ else
 	echo SLAC datadev device not found.
 fi
 
+# check for g3 SLAC pgpcards
 lspci_SLAC_pgp=`lspci -d 1a4a:2020 -n`
-if [ "$lspci_SLAC_pgp" != "" ]; then
+# Also check for old g2 SLAC pgpcards
+lspci_SLAC_pgpg2=`lspci -d 1a4a:2000 -n`
+if [ "$lspci_SLAC_pgp" != "" -o "$lspci_SLAC_pgpg2" != "" ]; then
 	if [ -n "$SLAC_AES_DRIVER" -a -f $SLAC_AES_DRIVER/pgpcard.ko ]; then
 		echo Installing SLAC pgpcard driver: $SLAC_AES_DRIVER
 		rmmod pgpcard
